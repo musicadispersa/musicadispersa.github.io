@@ -1,0 +1,13 @@
+---
+title: "Música Dispersa — Apéndices"
+description: "Glosario, bibliografía, notas adicionales e imágenes del libro"
+baseurl: ""
+url: "https://musicadispersa.github.io"
+markdown: kramdown
+theme: minima
+plugins: []
+collections:
+  glossary:
+    output: true
+permalink: /:path/
+---
