@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>{{ page.title }} — {{ site.title }}</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mini.css/3.0.1/mini-default.min.css">
+  <style>
+    header {margin-bottom: 1rem}
+    .search-results{list-style:none;padding:0}
+    .search-item{margin:0.5rem 0;padding:0.5rem;border-bottom:1px solid #eee}
+    .search-hit{font-size:.9rem;color:#555}
+  </style>
+</head>
+<body>
+  <header>
+    <h1><a href="/">{{ site.title }}</a></h1>
+    <nav>
+      <a href="/">Inicio</a> |
+      <a href="/glossary/">Glosario</a> |
+      <a href="/bibliography/">Bibliografía</a> |
+      <a href="/notes/">Notas</a> |
+      <a href="/search/">Buscar</a>
+    </nav>
+    <div style="margin-top:.5rem">
+      <input id="site-search" placeholder="Buscar en el glosario... (Enter para ir a la búsqueda)" aria-label="Buscar en el sitio" />
+    </div>
+  </header>
+
+  <main>
+    {{ content }}
+  </main>
+
+  <footer>
+    <small>{{ site.title }} — {{ site.description }}</small>
+  </footer>
+
+  <!-- Fuse.js para búsqueda cliente -->
+  <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.6.2/dist/fuse.min.js"></script>
+  <script src="/assets/js/search.js"></script>
+
+  <!-- Citation.js para renderizar BibTeX en cliente -->
+  <script src="https://cdn.jsdelivr.net/npm/citation-js@0.6.2/dist/citation.min.js"></script>
+  <script src="/assets/js/bib.js"></script>
+</body>
+</html>
