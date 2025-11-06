@@ -1,0 +1,4 @@
+Coloca tus imágenes en esta carpeta. Referéncialas desde Markdown así:
+![Texto alternativo](/assets/images/mi-imagen.jpg)
+
+Recomendación: optimiza las imágenes (JPG/WebP, calidad 70–80%) para reducir tiempos de carga.
