@@ -1,0 +1,80 @@
+/* styles.css - estilo simple para la ficha del libro */
+:root{
+  --bg:#fbfbfb;
+  --card:#ffffff;
+  --text:#222;
+  --muted:#666;
+  --accent:#8b2fae;
+  --container-width:1000px;
+  --radius:8px;
+  font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+}
+
+*{box-sizing:border-box}
+body{
+  margin:0;
+  background:var(--bg);
+  color:var(--text);
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+}
+
+.container{
+  max-width:var(--container-width);
+  margin:0 auto;
+  padding:24px;
+}
+
+.site-header{
+  background:linear-gradient(90deg,#111827 0%, #1f2937 100%);
+  color:#fff;
+  padding:20px 0;
+}
+.site-title{margin:0;font-size:1.25rem}
+.site-sub{margin:0;color:rgba(255,255,255,0.8);font-size:0.9rem}
+
+.book-card{
+  background:var(--card);
+  border-radius:var(--radius);
+  padding:28px;
+  margin-top:24px;
+  box-shadow:0 6px 18px rgba(20,20,30,0.06);
+  display:flex;
+  gap:24px;
+  align-items:flex-start;
+}
+
+.book-meta{flex:1}
+
+.book-title{
+  font-size:1.45rem;
+  margin:0 0 6px 0;
+  color:var(--accent);
+}
+.book-subtitle{
+  margin:0 0 12px 0;
+  font-size:1.05rem;
+  color:var(--text);
+  font-weight:600;
+}
+.book-description{
+  color:var(--muted);
+  margin:0 0 12px 0;
+  line-height:1.5;
+}
+
+.book-series{
+  margin:0 0 16px 0;
+  font-weight:600;
+}
+
+.book-details h4{margin:0 0 8px 0}
+.book-details ul{margin:0;padding-left:1.15rem;color:var(--muted)}
+
+.call-to-action{margin-top:18px;padding:12px;border-left:3px solid var(--accent);background:linear-gradient(180deg, rgba(139,47,174,0.03), transparent)}
+
+.site-footer{padding:18px 0;text-align:center;color:var(--muted);font-size:0.9rem;margin-top:28px}
+.site-footer a{color:var(--accent);text-decoration:none}
+@media (max-width:720px){
+  .book-card{flex-direction:column}
+}
