@@ -73,8 +73,46 @@ body{
 
 .call-to-action{margin-top:18px;padding:12px;border-left:3px solid var(--accent);background:linear-gradient(180deg, rgba(139,47,174,0.03), transparent)}
 
+/* Navigation buttons */
+.navigation-buttons{margin-top:24px;padding-top:20px;border-top:1px solid rgba(0,0,0,0.06)}
+.navigation-buttons h4{margin:0 0 14px 0;font-size:1.05rem;color:var(--text)}
+.button-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit, minmax(160px, 1fr));
+  gap:12px;
+}
+.nav-button{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  padding:16px 12px;
+  background:linear-gradient(135deg, var(--accent) 0%, #6b1f8d 100%);
+  color:#fff;
+  text-decoration:none;
+  border-radius:8px;
+  transition:transform 0.2s ease, box-shadow 0.2s ease;
+  box-shadow:0 2px 8px rgba(139,47,174,0.2);
+  min-height:90px;
+}
+.nav-button:hover{
+  transform:translateY(-2px);
+  box-shadow:0 4px 12px rgba(139,47,174,0.35);
+}
+.button-icon{
+  font-size:1.8rem;
+  margin-bottom:6px;
+  display:block;
+}
+.button-text{
+  font-size:0.9rem;
+  font-weight:600;
+  text-align:center;
+}
+
 .site-footer{padding:18px 0;text-align:center;color:var(--muted);font-size:0.9rem;margin-top:28px}
 .site-footer a{color:var(--accent);text-decoration:none}
 @media (max-width:720px){
   .book-card{flex-direction:column}
+  .button-grid{grid-template-columns:repeat(2, 1fr)}
 }
