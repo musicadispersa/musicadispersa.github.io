@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Glosario — Ecos desde los márgenes</title>
+  <meta name="description" content="Glosario de términos de Ecos desde los márgenes" />
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <h1 class="site-title">musicadispersa</h1>
+      <p class="site-sub">Glosario — Ecos desde los márgenes</p>
+      <nav>
+        <a href="index.html">← Volver al inicio</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <article>
+      <h2>Glosario</h2>
+      
+      <div class="glossary-search">
+        <input 
+          type="search" 
+          id="glossary-search-input" 
+          placeholder="Buscar términos..."
+          aria-label="Buscar en el glosario"
+        />
+      </div>
+
+      <div id="glossary-container">
+        <p>Cargando glosario...</p>
+      </div>
+    </article>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>© <span id="year"></span> Música Dispersa — <a href="https://github.com/musicadispersa/musicadispersa.github.io">Repositorio</a></p>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+  <script src="assets/glossary-search.js"></script>
+</body>
+</html>
