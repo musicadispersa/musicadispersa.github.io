@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Glosario — musicadispersa</title>
+  <meta name="description" content="Glosario de términos musicales y conceptuales para Ecos desde los márgenes" />
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .search-box {
+      margin: 24px 0;
+      padding: 12px;
+      background: var(--card);
+      border-radius: var(--radius);
+      box-shadow: 0 2px 8px rgba(20,20,30,0.06);
+    }
+    .search-box input {
+      width: 100%;
+      padding: 10px 14px;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      font-size: 1rem;
+      font-family: inherit;
+    }
+    .search-box input:focus {
+      outline: none;
+      border-color: var(--accent);
+    }
+    .glossary-list {
+      margin-top: 24px;
+    }
+    .glossary-item {
+      background: var(--card);
+      border-radius: var(--radius);
+      padding: 20px;
+      margin-bottom: 16px;
+      box-shadow: 0 2px 8px rgba(20,20,30,0.06);
+    }
+    .glossary-term {
+      font-size: 1.3rem;
+      font-weight: 600;
+      color: var(--accent);
+      margin: 0 0 8px 0;
+    }
+    .glossary-definition {
+      color: var(--text);
+      line-height: 1.6;
+      white-space: pre-wrap;
+    }
+    .no-results {
+      padding: 40px 20px;
+      text-align: center;
+      color: var(--muted);
+      background: var(--card);
+      border-radius: var(--radius);
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <h1 class="site-title">musicadispersa</h1>
+      <p class="site-sub">Glosario</p>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="search-box">
+      <input type="text" id="glossary-search" placeholder="Buscar términos..." />
+    </div>
+
+    <div id="glossary-container" class="glossary-list">
+      <!-- Los términos del glosario se cargarán aquí dinámicamente -->
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>© <span id="year"></span> Música Dispersa — <a href="/">Inicio</a> — <a href="https://github.com/musicadispersa/musicadispersa.github.io">Repositorio</a></p>
+    </div>
+  </footer>
+
+  <script src="assets/glossary-search.js"></script>
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
