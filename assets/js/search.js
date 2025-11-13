@@ -1,6 +1,6 @@
 (async function () {
   async function loadIndex() {
-    const res = await fetch('/assets/js/glossary.json');
+    const res = await fetch('/assets/glossary.json');
     return res.ok ? res.json() : [];
   }
 
@@ -25,7 +25,7 @@
 
     const index = await loadIndex();
     const fuse = new Fuse(index, {
-      keys: ['title', 'term', 'content'],
+      keys: ['term', 'definition'],
       threshold: 0.4,
       includeMatches: true,
       minMatchCharLength: 2,
@@ -45,9 +45,8 @@
     results.forEach(item => {
       const li = document.createElement('li');
       li.className = 'search-item';
-      li.innerHTML = '<a href="' + (item.url || '#') + '"><strong>' + item.title + '</strong></a>' +
-                     (item.term ? ' <em>(' + item.term + ')</em>' : '') +
-                     '<div class="search-hit">' + (item.excerpt || (item.content || '').slice(0,200)) + '...</div>';
+      li.innerHTML = '<strong>' + item.term + '</strong>' +
+                     '<div class="search-hit">' + (item.definition || '').slice(0,200) + '...</div>';
       ul.appendChild(li);
     });
     container.appendChild(ul);
