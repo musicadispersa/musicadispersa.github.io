@@ -4,25 +4,41 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Ecos desde los márgenes — musicadispersa</title>
-  <meta name="description" content="Ecos desde los márgenes: Arqueologías y Futurismos del Sonido Experimental y las Artes Performativas Extremas. Una historia feminista y anticolonial del sonido y la performatividad." />
+  <meta name="description" content="Ecos desde los márgenes: Arqueologías y Futurismos del Sonido Experimental y las Artes Performativas Extremas.">
   <meta property="og:title" content="Ecos desde los márgenes" />
-  <meta property="og:description" content="Arqueologías y Futurismos del Sonido Experimental y las Artes Performativas Extremas — Una Historia Feminista y Anticolonial del Sonido y la Performatividad." />
+  <meta property="og:description" content="Arqueologías y Futurismos del Sonido Experimental y las Artes Performativas Extremas." />
   <meta property="og:type" content="book" />
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
   <header class="site-header">
-    <div class="container">
-      <h1 class="site-title">musicadispersa</h1>
-      <p class="site-sub">Publicaciones y proyectos sonoros</p>
+    <div class="container header-row">
+      <div class="brand">
+        <h1 class="site-title">musicadispersa</h1>
+        <p class="site-sub">Publicaciones y proyectos sonoros</p>
+      </div>
+
+      <nav class="top-nav" aria-label="Navegación principal">
+        <a class="btn" href="glosario.html">Glosario</a>
+        <a class="btn" href="bibliography.md">Bibliografía</a>
+        <a class="btn" href="notes/">Notas</a>
+        <a class="btn" href="imagenes/">Imágenes</a>
+        <a class="btn" href="#comprar" id="comprar-link">Comprar</a>
+        <a class="btn" href="info.html">Info</a>
+      </nav>
+
+      <div class="glossary-search">
+        <input id="glossary-search" type="search" placeholder="Buscar en el glosario…" aria-label="Buscar en el glosario">
+        <div id="glossary-results" class="search-results" role="listbox" aria-label="Resultados del glosario"></div>
+      </div>
     </div>
   </header>
 
   <main class="container">
     <article class="book-card">
       <div class="book-cover-col">
-        <!-- Guarda la portada como assets/cover.jpg -->
-        <img src="assets/cover.jpg" alt="Portada de Ecos desde los márgenes — Roberto Vilela" class="book-cover" />
+        <!-- Asegúrate de que assets/cover.png exista -->
+        <img src="assets/cover.png" alt="Portada de Ecos desde los márgenes — Roberto Vilela" class="book-cover" />
       </div>
 
       <div class="book-meta">
@@ -48,20 +64,20 @@
             <li>Redactado y editado en Yebra (Guadalajara, España)</li>
           </ul>
 
-          <p class="pub-license">Se permite copiar, distribuir y comunicar públicamente el material, siempre que se reconozca la autoría, no se utilice con fines comerciales y no se realicen obras derivadas.</p>
+          <p class="pub-license">Se permite copiar, distribuir y comunicar públicamente el material, siempre que se reconozca la autoría y no se use con fines comerciales.</p>
         </section>
 
         <section class="series-list">
           <h4>Volúmenes de la serie</h4>
           <ol>
-            <li>Volumen I: Señales antes del lenguaje: Acústica del cosmos, génesis terrestre y vibraciones protohumanas</li>
-            <li>Volumen II: Resonancias del cuerpo pensante: De la alquimia renacentista a la mecánica del gesto</li>
-            <li>Volumen III: Disonancias de la modernidad: Vanguardias, máquinas y genealogías feministas del ruido</li>
-            <li>Volumen IV: Ecologías del futuro audible: Tecnologías, biología expandida y conciencia posthumana</li>
-            <li>Volumen V: Silencio del último oyente: Cosmología del fin y música para el cierre del tiempo</li>
+            <li>Volumen I: Señales antes del lenguaje...</li>
+            <li>Volumen II: Resonancias del cuerpo pensante...</li>
+            <li>Volumen III: Disonancias de la modernidad...</li>
+            <li>Volumen IV: Ecologías del futuro audible...</li>
+            <li>Volumen V: Silencio del último oyente...</li>
           </ol>
 
-          <p class="series-note">Investigación independiente inscrita en el marco de Música Dispersa — Archivo de Sonido Experimental y Artes Performativas. La investigación cuenta con un glosario y bibliografía completa disponibles en línea para consulta abierta, junto con notas adicionales y material complementario.</p>
+          <p class="series-note">Investigación independiente inscrita en el marco de Música Dispersa — Archivo de Sonido Experimental y Artes Performativas.</p>
         </section>
 
         <section class="links">
@@ -78,8 +94,13 @@
     </div>
   </footer>
 
+  <script src="assets/glossary-search.js"></script>
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
+    document.getElementById('comprar-link').addEventListener('click', function(e){
+      e.preventDefault();
+      window.location.href = 'https://buy.example.com/tu-producto'; // sustituye por tu enlace real
+    });
   </script>
 </body>
 </html>

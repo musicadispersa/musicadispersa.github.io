@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Glosario — Música Dispersa</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-row">
+      <div class="brand">
+        <h1 class="site-title">musicadispersa</h1>
+        <p class="site-sub">Glosario</p>
+      </div>
+      <nav class="top-nav">
+        <a class="btn" href="index.html">Inicio</a>
+        <a class="btn" href="bibliography.md">Bibliografía</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <h2>Glosario</h2>
+    <p>Busca un término o navega por la lista completa.</p>
+
+    <input id="glossary-page-search" type="search" placeholder="Buscar en el glosario…" aria-label="Buscar en el glosario">
+    <ul id="glossary-list"></ul>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>© <span id="year"></span> Música Dispersa</p>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+    async function loadGlossary() {
+      try {
+        const res = await fetch('assets/glossary.json');
+        const data = await res.json();
+        const list = document.getElementById('glossary-list');
+        data.forEach(entry => {
+          const li = document.createElement('li');
+          li.innerHTML = '<strong>' + entry.term + '</strong>: ' + entry.definition;
+          list.appendChild(li);
+        });
+
+        const search = document.getElementById('glossary-page-search');
+        search.addEventListener('input', () => {
+          const q = search.value.trim().toLowerCase();
+          list.innerHTML = '';
+          data.filter(e => e.term.toLowerCase().includes(q) || e.definition.toLowerCase().includes(q))
+              .forEach(entry => {
+                const li = document.createElement('li');
+                li.innerHTML = '<strong>' + entry.term + '</strong>: ' + entry.definition;
+                list.appendChild(li);
+              });
+        });
+
+      } catch(err) {
+        console.error('No se pudo cargar el glosario:', err);
+        document.getElementById('glossary-list').innerText = 'No se pudo cargar la lista del glosario.';
+      }
+    }
+    loadGlossary();
+  </script>
+</body>
+</html>
